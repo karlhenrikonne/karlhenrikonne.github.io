@@ -3,11 +3,13 @@
 <head>
   <script>
     function foo() {
-      let inputString = prompt('Ange dag (1-31)', '1');
-      let userDay = ParseInt(inputString);
+      let myString;
 
-      let inputString = prompt('Ange månad (1-31)', '1');
-      let userMonth = ParseInt(inputString);
+      myString = prompt('Ange dag (1-31)', '1');
+      let userDay = parseInt(myString);
+
+      myString = prompt('Ange månad (1-31)', '1');
+      let userMonth = parseInt(myString);
 
       let daysInMonth = 30;
       if (userMonth === 2)
@@ -24,12 +26,12 @@
           userMonth = 1;
       }
 
-      prompt(`Om en vecka är det ${userDay}/${userMonth}.`)
+      confirm(`Om en vecka är det ${userDay}/${userMonth}.`)
 
     }
   </script>
 </head>
-<body onload="foo()">
+<body onload='foo()'>
 
 <h1>My First Heading</h1>
 <p>My first paragraph.</p>
