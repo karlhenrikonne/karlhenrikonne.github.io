@@ -3,7 +3,29 @@
 <head>
   <script>
     function foo() {
-      let customerName = prompt("Please enter your name", "");
+      let inputString = prompt('Ange dag (1-31)', '1');
+      let userDay = ParseInt(inputString);
+
+      let inputString = prompt('Ange månad (1-31)', '1');
+      let userMonth = ParseInt(inputString);
+
+      let daysInMonth = 30;
+      if (userMonth === 2)
+        daysInMonth = 28;
+      else if (userMonth === 1 || userMonth === 3 || userMonth === 5 || userMonth === 7 || userMonth === 8 || userMonth === 10 || userMonth === 12)
+        daysInMonth = 31;
+
+      userDay += 7;
+
+      if (userDay > daysInMonth) {
+        userDay -= daysInMonth;
+        userMonth++;
+        if (userMonth > 12)
+          userMonth = 1;
+      }
+
+      prompt(`Om en vecka är det ${userDay}/${userMonth}.`)
+
     }
   </script>
 </head>
